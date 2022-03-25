@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/karimalatrash/.zprezto'
+let g:netrw_dirhist_3='/Users/karimalatrash/Documents/Forcen-Code/Bonnechere-BC-DEVAPP-v3.0.0'
+let g:netrw_dirhist_2='/Users/karimalatrash/Documents/CodePlayground/a.out.dSYM/Contents/Resources'
+let g:netrw_dirhist_1='/Users/karimalatrash/Documents/2B/ece252/ece252-f21-final-kalatras/q4'
