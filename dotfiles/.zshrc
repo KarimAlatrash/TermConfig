@@ -2,4 +2,4 @@
 autoload -Uz promptinit
 promptinit
 prompt fire
-source ~/Documents/CodePlayground/env.sh
+source ~/Developer/TermConfig/.termconfig/env.sh
