@@ -14,8 +14,11 @@ teehee
 4. Add all the 'rc' files to the ~/ folder on your computer. These configure all of the things you just installed to get the same configuration as me.
 5. Install the colour theme for Iterm by: CMD+i --> Colors --> Color Presets --> Import Theme --> Color Presets --> Spaceship
 6. Install extensions found [ here ](https://timonbimon.medium.com/yet-another-step-by-step-guide-for-a-better-terminal-setup-6c5e879d4c8c)
+7. Install shpotify from [ here ](https://github.com/hnarayanan/shpotify)
 # How to Add Multiple Git SSH Keys
 1. Generate an ssh key in a folder somewhere on your machine, document the path
 2. In a source file for the `.zshrc` add the following alias:
 `<aliasname> ='GIT_SSH_COMMAND="ssh -i <path to ssh key>" git'`
 example: `alias forcengit='GIT_SSH_COMMAND="ssh -i /Users/karimalatrash/Documents/Forcen-Code/.ssh/forcen_ssh" git'`
+
+TODO: https://medium.com/@dallasbille/controlling-your-spotify-from-terminal-a505990bafc2
