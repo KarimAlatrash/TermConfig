@@ -22,3 +22,11 @@ teehee
 example: `alias forcengit='GIT_SSH_COMMAND="ssh -i /Users/karimalatrash/Documents/Forcen-Code/.ssh/forcen_ssh" git'`
 
 TODO: https://medium.com/@dallasbille/controlling-your-spotify-from-terminal-a505990bafc2
+
+# VIM Config Installation
+1. Install vim plug
+2. Copy vimrc onto machine
+3. brew install ripgrep
+4. Install nodejs
+5. Clone molokai from here: git@github.com:tomasr/molokai.git and run `cp molokai/colors/molokai.vim ~/.vim/colors/`
+6. vim --> :PlugInstall
