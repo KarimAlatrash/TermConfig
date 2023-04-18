@@ -36,6 +36,8 @@ set number
 
 " Sets tabs to be a reasonable size
 set tabstop=4
+set smarttab
+set shiftwidth=4
 
 " Sets highlighting on search
 set hlsearch
