@@ -28,5 +28,6 @@ TODO: https://medium.com/@dallasbille/controlling-your-spotify-from-terminal-a50
 2. Copy vimrc onto machine
 3. brew install ripgrep
 4. Install nodejs
+5. Install bat --> `sudo apt-get install bat` OR `brew install bat`. NOTE: bat binary might be named batcat or bat depending on if a name conflicts
 5. Clone molokai from here: git@github.com:tomasr/molokai.git and run `cp molokai/colors/molokai.vim ~/.vim/colors/`
 6. vim --> :PlugInstall
