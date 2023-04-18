@@ -1,4 +1,3 @@
- > fzf
 call plug#begin('~/.vim/plugged')
 
 " Vim Plug Plugins
@@ -13,7 +12,6 @@ call plug#end()
 let g:rehash256 = 1
 
 " Sets Colour scheme
-set termguicolors
 let g:gruvbox_italic=1
 colorscheme molokai
 hi Normal guibg=NONE
