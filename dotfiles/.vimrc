@@ -5,6 +5,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf.vim'
+Plug 'cjuniet/clang-format.vim'
+
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -30,6 +32,8 @@ nnoremap <silent> <C-p> :GFiles<CR>
 nnoremap <silent> <C-f> :Rg <C-R><C-W><CR>
 " Maps Ctrl+k to git blame
 nnoremap <silent> <C-k> :Git blame <CR>
+" Maps Ctrl+F to clang format
+nnoremap <silent> <C-F> :ClangFormat <CR>
 
 " Sets line numebrs to be on
 set number
