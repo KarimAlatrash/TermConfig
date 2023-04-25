@@ -6,17 +6,17 @@
 OS="NONE"
 INSTALL_STRING="NONE"
 if [ "$(uname)" == "Darwin" ]; then
-    OS = "MAC"
+    OS="MAC"
     INSTALL_STRING="brew install"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    OS = "LINUX"
+    OS="LINUX"
     INSTALL_STRING="sudo apt-get install"
 fi
 
 # Do not support anything else
 if [ $OS == "NONE" ]; then
     exit 1
-
+fi
 
 #############################
 # VIM Installation
@@ -28,8 +28,9 @@ eval "$INSTALL_STRING vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Create symlink for vimrc so you always have most up to date
-ln -s ./dotfiles/.vimrc ~/.vimrc
+echo "Copy vimrc so you always have most up to date"
+rm -rf ~/.vimrc
+cp ./dotfiles/.vimrc ~/.vimrc
 
 # Install ripgrep so you can search through repos
 eval "$INSTALL_STRING ripgrep"
@@ -40,7 +41,7 @@ eval "$INSTALL_STRING node"
 # Install bat/batcat so you can have nice syntax highlighting in previews
 eval "$INSTALL_STRING bat"
 
-# Copy the colors file to your .vim folder
+echo "Copy the colors file to your .vim folder"
 mkdir ~/.vim/colors
 cp ./colors/molokai.vim ~/.vim/colors/
 
@@ -53,10 +54,12 @@ vim +'PlugInstall --sync' +qa
 
 eval "$INSTALL_STRING tmux"
 
-# Symlink the tmux config
-ln -s ./dotfiles/.tmux.conf ~/.tmux.conf
+echo "Symlink the tmux config"
+rm -rf ~/.tmux.conf
+cp ./dotfiles/.tmux.conf ~/.tmux.conf
 
 
 #############################
 # END OF SCRIPT
 #############################
+exit 1
