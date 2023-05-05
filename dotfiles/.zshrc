@@ -1,20 +1,44 @@
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
-
-# Source Prezto.
+##############
+# Source Relevant files
+##############
+# Source zprezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-eval "$(jump shell)"
-export PATH="/usr/bin/fzf:$PATH"
-eval "$(starship init zsh)"
+# Source autojump
+if [[ -s "/usr/share/autojump/autojump.sh" ]]; then
+  source /usr/share/autojump/autojump.sh
+fi
+
+# Source keybindings
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
-# Source autojump
-. /usr/share/autojump/autojump.sh
+# Start jump
+eval "$(autojump shell)"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Start starship
+eval "$(starship init zsh)"
+
+##############
+# Export Environment Variables
+##############
+export PATH="/usr/bin/fzf:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=/opt/homebrew/bin:$PATH
+
+##############
+# Aliases
+##############
+alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+alias g='git'
+alias ecessh="ssh kalatras@eceubuntu.uwaterloo.ca -Y"
+alias mc-ssh="ssh opc@140.238.130.25"
+alias ecessh-j="ssh kalatras@eceterm.uwaterloo.ca kalatras@eceubuntu.uwaterloo.ca -Y"
+alias etermssh="ssh kalatras@eceterm.uwaterloo.ca -Y"
+alias sp="spotify play"
+alias spp="spotify pause"
+alias spl="spotify play list"
+alias sps="spotify status"
+
