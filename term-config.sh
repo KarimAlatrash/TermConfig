@@ -36,15 +36,29 @@ eval "$INSTALL_STRING autojump"
 
 # Fuzzy reverse search
 eval "$INSTALL_STRING fzf"
+
+# Starship for terminal
 eval "curl -sS https://starship.rs/install.sh | sh"
 
+# Copy keybindings to home directory
+rm ~/.fzf-key-bindings.zsh
+cp ./config/fzf-key-bindings.zsh ~/.fzf-key-bindings.zsh
+
+# Copy auto complete config to home directory
+rm ~/.fzf-completion.zsh
+cp ./config/fzf-completion.zsh ~/.fzf-completion.zsh
+
+# Copy zshrc to home directory so it gets run on boot
 rm ~/.zshrc
 cp ./dotfiles/.zshrc ~/
 
+# Copy zpreztorc to home directory so it gets run on boot
 rm ~/.zpreztorc
 cp ./dotfiles/.zpreztorc ~/
 
-chsh -s zsh
+# Change shell to zsh
+ZSH_PATH=$(which zsh)
+eval "chsh -s $ZSH_PATH"
 
 #############################
 # VIM Installation

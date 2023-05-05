@@ -12,8 +12,8 @@ if [[ -s "/usr/share/autojump/autojump.sh" ]]; then
 fi
 
 # Source keybindings
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+source ~/.fzf-key-bindings.zsh
+source ~/.fzf-completion.zsh
 
 # Start jump
 eval "$(autojump shell)"
