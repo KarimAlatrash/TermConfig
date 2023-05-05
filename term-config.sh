@@ -26,10 +26,7 @@ fi
 eval "$INSTALL_STRING zsh"
 
 # Install zprezto
-zsh -c 'git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" \
-setopt EXTENDED_GLOB \
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}" \
-done; exit'
+zsh -c 'rm -rf ${ZDOTDIR:-$HOME}/.zprezto && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"'
 
 # Simple folder navigation
 eval "$INSTALL_STRING autojump"
@@ -38,7 +35,7 @@ eval "$INSTALL_STRING autojump"
 eval "$INSTALL_STRING fzf"
 
 # Starship for terminal
-eval "curl -sS https://starship.rs/install.sh | sh"
+curl -sS https://starship.rs/install.sh | sh
 
 # Copy keybindings to home directory
 rm ~/.fzf-key-bindings.zsh
@@ -96,7 +93,7 @@ vim +'PlugInstall --sync' +qa
 
 eval "$INSTALL_STRING tmux"
 
-echo "Symlink the tmux config"
+echo "Copy the tmux config"
 rm -rf ~/.tmux.conf
 cp ./dotfiles/.tmux.conf ~/.tmux.conf
 

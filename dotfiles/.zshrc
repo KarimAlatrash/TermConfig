@@ -1,6 +1,6 @@
-##############
+#########################
 # Source Relevant files
-##############
+########################
 # Source zprezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -8,7 +8,9 @@ fi
 
 # Source autojump
 if [[ -s "/usr/share/autojump/autojump.sh" ]]; then
-  source /usr/share/autojump/autojump.sh
+  . /usr/share/autojump/autojump.sh
+elif [[ -s "/opt/homebrew/etc/autojump.sh" ]]; then  
+	. /opt/homebrew/etc/autojump.sh
 fi
 
 # Source keybindings
@@ -21,9 +23,9 @@ eval "$(autojump shell)"
 # Start starship
 eval "$(starship init zsh)"
 
-##############
+###############################
 # Export Environment Variables
-##############
+###############################
 export PATH="/usr/bin/fzf:$PATH"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=/opt/homebrew/bin:$PATH
