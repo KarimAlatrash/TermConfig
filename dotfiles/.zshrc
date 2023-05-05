@@ -18,7 +18,7 @@ source ~/.fzf-key-bindings.zsh
 source ~/.fzf-completion.zsh
 
 # Start jump
-eval "$(autojump shell)"
+#eval "$(autojump shell)"
 
 # Start starship
 eval "$(starship init zsh)"
