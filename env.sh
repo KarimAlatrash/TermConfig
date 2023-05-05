@@ -4,9 +4,6 @@
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=/opt/homebrew/bin:$PATH
 
-# Adding some cool terminal extensions
-eval "$(jump shell)"
-
 # Example aliases
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 alias g='git'

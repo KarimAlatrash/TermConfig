@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 #############################
 # Get OS
@@ -17,6 +17,34 @@ fi
 if [ $OS == "NONE" ]; then
     exit 1
 fi
+
+#############################
+# zsh Installation
+#############################
+
+# Duh
+eval "$INSTALL_STRING zsh"
+
+# Install zprezto
+zsh -c 'git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" \
+setopt EXTENDED_GLOB \
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}" \
+done; exit'
+
+# Simple folder navigation
+eval "$INSTALL_STRING autojump"
+
+# Fuzzy reverse search
+eval "$INSTALL_STRING fzf"
+eval "curl -sS https://starship.rs/install.sh | sh"
+
+rm ~/.zshrc
+cp ./dotfiles/.zshrc ~/
+
+rm ~/.zpreztorc
+cp ./dotfiles/.zpreztorc ~/
+
+chsh -s zsh
 
 #############################
 # VIM Installation
