@@ -43,4 +43,4 @@ alias sp="spotify play"
 alias spp="spotify pause"
 alias spl="spotify play list"
 alias sps="spotify status"
-
+alias ssh-klinux="ssh kalatrash@klinux.ca -p 2053 -t 'tmux -CC new -A -s workspace'"
